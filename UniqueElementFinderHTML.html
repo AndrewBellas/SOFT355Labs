@@ -3,41 +3,54 @@
 
 <script>
 
-//Finds the unique elements in an array
+var setInput = new Set();
+var arrayNew = new Array(9);
+var counter;
 
-const set1 = new Set();
-var array = [1,2,3,3,4,5];
+function addToArray(i){
+	arrayNew.push(i);
+}
 
-var amountUnique = 0;
+function getFromArray(){
+	return arrayNew.length;
+}
 
-window.onload = function(){
-
-set1.add(42);
-set1.add(12);
-set1.add(12);
-set1.add(12);
-
-var counter = 0;
-
-for (i = 0; i < array.length; i++){
-	//check through all elements of array, and feed into set, then user counter for amount of elements in set
-
-	set1.add(array[i]);
-
+function addToSet(i){
+	setInput.add(i);
 
 }
 
-	amountUnique = set1.size;
-
-	window.alert(amountUnique);
-
+function getFromSet(){
+	for (let item of setInput){
+		window.onalert(item);
+	}
 }
 
+function findUnique(){
+
+	 counter = 0;
+	for (let item of setInput){
+		counter = setInput.size();
+	}
+
+	window.alert(counter);
+}
+
+function debug(){
+	
+	addToArray(document.getElementById("input"));
+	document.getElementById("display").innerHTML = getFromArray();
+}
 </script>
 
 <body>
 
+	<div id = "input"><input type = "text" value = "please type numbers"></div>
+	<div id = "button"><button onclick = "debug()">Enter</button></div>
 	<div id ="display"></div>
 
 </body>
+
+
 </html>
+
