@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+
+            //CAN ONLY CALCULATE UP TO 170 FACTORIAL?
+
+            function findFactorial(factorial){
+                factorial = document.getElementById("input").value;
+
+                var result = 1;
+
+                if (factorial == 0){
+                    window.alert("1");
+                }
+                if(factorial > 0){
+                    for (i = 1; i <= factorial; i++){
+                        
+                        result = result * i;
+                    }
+                    window.alert(result);
+                }
+                if (factorial < 0){
+                    window.alert("Factorial could not be calculated.");
+                }
+            }
+            
+        </script>
+
+        <p><h1>Enter a factorial:</h1></p>
+        <input type = "text" id = "input"/>
+        <button onclick = "findFactorial()" id = "submit">Enter</button>
+
+
+    </body>
+</html>
