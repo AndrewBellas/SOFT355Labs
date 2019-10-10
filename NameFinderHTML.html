@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            function nameFinder(){
+                ///console.log("What is your name?");
+                //var k = prompt("What is your name?");
+                var k = document.getElementById("input").value;
+                console.log("Your name is " + k);
+            }
+
+            //window.onload = function(){
+                //nameFinder();
+            //}
+        </script>
+
+        <p><h1>What's your name?</h1></p>
+        <input type = "text" id = "input"/>
+        <button id = "enter" onclick = "nameFinder()">Submit</button>
+
+    </body>
+</html>
