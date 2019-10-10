@@ -1,56 +1,25 @@
 <!DOCTYPE html>
 <html>
 
-<script>
+ <body>
 
-var setInput = new Set();
-var arrayNew = new Array(9);
-var counter;
+  <script>
+   var newArray = [];
 
-function addToArray(i){
-	arrayNew.push(i);
-}
+   function findUniques(){
+    newArray.push(document.getElementById("input").value);
+	const newSet = new Set(newArray);
+	document.getElementById("display").innerHTML = "Amount of unique values is: " + newSet.size;
+   }
+  </script>
+ 
+  <p><h1>Unique element finder</h1></p>
+  <p><h3>please type in numbers to find how many unique there are:</h3></p>
+  <input id="input" type=text>
+  <input type=button onclick="findUniques()" value="Add Number"/>
 
-function getFromArray(){
-	return arrayNew.length;
-}
+<div id="display"></div>
 
-function addToSet(i){
-	setInput.add(i);
-
-}
-
-function getFromSet(){
-	for (let item of setInput){
-		window.onalert(item);
-	}
-}
-
-function findUnique(){
-
-	 counter = 0;
-	for (let item of setInput){
-		counter = setInput.size();
-	}
-
-	window.alert(counter);
-}
-
-function debug(){
-	
-	addToArray(document.getElementById("input"));
-	document.getElementById("display").innerHTML = getFromArray();
-}
-</script>
-
-<body>
-
-	<div id = "input"><input type = "text" value = "please type numbers"></div>
-	<div id = "button"><button onclick = "debug()">Enter</button></div>
-	<div id ="display"></div>
-
+  </div>
 </body>
-
-
 </html>
-
