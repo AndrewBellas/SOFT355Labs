@@ -1,6 +1,7 @@
 class Student{
     name = "no name";
     stage = 0;
+    module = "null";
 
     constructor(name, stage){
         this.name = name;
@@ -25,6 +26,11 @@ class Student{
     registerForModule(modName){
         var module = new Module(modName);
         module.currentEnrol+= 1;
+    }
+
+    enrollOnModule(module){
+        module.studentSet.add(this.name);
+        this.module = module.name;
     }
 }
 
@@ -66,10 +72,19 @@ suite("JavaScript tests", function() {
         var studentOne = new Student("Andrew Bellas", 0);
         chai.assert.equal(studentOne.progress(), 1, "The student stage is 1.");
     })
+
     test("Testing whether lecturers are correctly assigned to the modules.", function(){
         var lecturerOne = new Lecturer("Mike Truk", 0);
         var moduleOne = new Module("SOFT355");
         lecturerOne.assignToModule(moduleOne);
         chai.assert.equal(moduleOne.lecturer, "Mike Truk", 'Lecturer is correctly assigned.');
+    })
+
+    test("Testing whether a student has been enrolled to a module.", function(){
+        var studentTwo = new Student("Evan Edwards", 0);
+        var moduleTwo = new Module("ISAD155");
+        studentTwo.enrollOnModule(moduleTwo);
+        //chai.assert.equal(studentTwo.module, "ISAD155", 'Student is enrolled on module ISAD155.');
+        chai.assert.equal(moduleTwo.studentSet.has(studentTwo.name), true, "studentTwo is enrolled on moduleTwo.");
     })
 });
