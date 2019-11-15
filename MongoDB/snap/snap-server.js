@@ -1,5 +1,5 @@
 var express = require("express");
-var logic = require("./logic");
+var logic = require("./db");
 
 var app = express();
 
