@@ -56,5 +56,6 @@ async function nextTurn(gameId, player){
     return card;
 }
 
-module.exports.newGame = newGame;
 module.exports.nextTurn = nextTurn;
+
+module.exports.newGame = newGame;
