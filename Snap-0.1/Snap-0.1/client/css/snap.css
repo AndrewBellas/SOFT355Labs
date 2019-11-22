@@ -8,3 +8,25 @@ header {
     padding: 10px;
     margin: 0;
 }
+
+#game {
+    margin: 100px auto 0px auto;
+}
+
+#game p {
+    color: #ffffff;
+    text-align: center;
+}
+
+.card {
+    background-color: #ffffff;
+    width: 242px;
+    height: 353px;
+    border-radius: 30px;
+    visibility: hidden;
+}
+
+.card img {
+    width: 222px;
+    margin: 10px;
+}

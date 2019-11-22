@@ -38,5 +38,23 @@ async function newGame() {
     return game;
 }
 
+async function nextTurn(gameId, player){
+    var game = await db.getGame(gameId);
+
+    var cardId;
+    if (player == 1){
+        cardId = game.player1.pop();
+    } else {
+        cardId = game.player2.pop();
+    }
+    game.mainPile.push(cardId);
+
+    await game.save();
+
+    var card = await db.getCard(cardId);
+
+    return card;
+}
 
 module.exports.newGame = newGame;
+module.exports.nextTurn = nextTurn;
